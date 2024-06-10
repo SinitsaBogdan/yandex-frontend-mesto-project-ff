@@ -6,17 +6,17 @@
 @import url('./__image/profile__image.css');
 
 .profile {
-  font-family: 'Inter', Arial, sans-serif;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  padding: 36px 0;
+	display: flex;
+	align-items: center;
+	padding: 36px 0;
+	color: #fff;
+	font-family: 'Inter', Arial, sans-serif;
 }
 
 @media screen and (max-width: 480px) {
-  .profile {
-    padding: 43px 0;
-    flex-direction: column;
-    text-align: center;
-  }
+	.profile {
+		flex-direction: column;
+		padding: 43px 0;
+		text-align: center;
+	}
 }

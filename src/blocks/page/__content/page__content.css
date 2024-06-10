@@ -1,8 +1,8 @@
 .page__content {
-  background-color: black;
-  min-height: 100vh;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	background-color: black;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }

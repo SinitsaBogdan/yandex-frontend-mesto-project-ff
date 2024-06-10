@@ -9,14 +9,14 @@
 @import url('./__image/popup__image.css');
 
 .popup {
-  font-family: 'Inter', Arial, sans-serif;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, .5);
-  position: fixed;
-  inline-size: 100%;
-  block-size: 100%;
-  inset: 0;
-  z-index: 10;
+	position: fixed;
+	inset: 0;
+	z-index: 10;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Inter', Arial, sans-serif;
+	background-color: rgba(0, 0, 0, 0.5);
+	inline-size: 100%;
+	block-size: 100%;
 }
