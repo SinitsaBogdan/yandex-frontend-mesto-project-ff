@@ -8,7 +8,7 @@ const cardsList = document.querySelector(classListCards);
 
 // --------------------------------------------------------------------------
 
-const likeCard = function (evt) {
+const likedCard = function (evt) {
 	evt.target.classList.toggle('card__like-button_is-active');
 };
 
@@ -37,5 +37,5 @@ export const deleteCard = function (btn) {
 };
 
 export const viewCards = function (list) {
-	list.forEach((el) => cardsList.append(appendCard(el, deleteCard, likeCard)));
+	list.forEach((el) => cardsList.append(appendCard(el, deleteCard, likedCard)));
 };

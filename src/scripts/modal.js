@@ -4,26 +4,26 @@ const classNameClose = 'popup__close';
 // --------------------------------------------------------------------------
 
 const open = function (modal) {
-	const poPupClose = modal.querySelector('.' + classNameClose);
+	const popUpClose = modal.querySelector('.' + classNameClose);
 	modal.classList.add(classNameOpen);
-	modal.addEventListener('keydown', (evt) => dialogCloseToEsc(evt, modal));
-	modal.addEventListener('click', (evt) => dialogCloseToOwerlay(evt, modal));
-	poPupClose.addEventListener('click', () => close(modal));
+	modal.addEventListener('click', (evt) => closeDialogToOwerlay(evt, modal));
+	popUpClose.addEventListener('click', () => close(modal));
+	document.addEventListener('keydown', (evt) => closeDialogToEsc(evt, modal));
 };
 
 const close = function (modal) {
-	const poPupClose = modal.querySelector('.' + classNameClose);
+	const popUpClose = modal.querySelector('.' + classNameClose);
 	modal.classList.remove(classNameOpen);
-	modal.removeEventListener('keydown', () => dialogCloseToEsc(evt, modal));
-	modal.removeEventListener('click', () => dialogCloseToOwerlay(evt, modal));
-	poPupClose.removeEventListener('click', () => close(modal));
+	modal.removeEventListener('click', () => closeDialogToOwerlay(evt, modal));
+	popUpClose.removeEventListener('click', () => close(modal));
+	document.removeEventListener('keydown', () => closeDialogToEsc(evt, modal));
 };
 
-const dialogCloseToEsc = function (evt, modal) {
+const closeDialogToEsc = function (evt, modal) {
 	if (evt.key === 'Escape') close(modal);
 };
 
-const dialogCloseToOwerlay = function ({ currentTarget, target }) {
+const closeDialogToOwerlay = function ({ currentTarget, target }) {
 	if (target === currentTarget) close(currentTarget);
 };
 
