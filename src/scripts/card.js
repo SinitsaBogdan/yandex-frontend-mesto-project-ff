@@ -1,41 +1,39 @@
-const idTemplateCard = '#card-template';
-const classListCards = '.places__list';
+const idSelectorTemplateCard = '#card-template';
+const classSelectorListWrapperItem = '.places__item';
+const classSelectorCard = '.card';
+const classSelectorCardImage = '.card__image';
+const classSelectorCardTitle = '.card__title';
+const classSelectorCardButtonLike = '.card__like-button';
+const classSelectorCardButtonDelete = '.card__delete-button';
+
+const nameSelectorCardButtonLikeIsActive = 'card__like-button_is-active';
+
+const cardTemplate = document.querySelector(idSelectorTemplateCard).content;
 
 // --------------------------------------------------------------------------
 
-const cardTemplate = document.querySelector(idTemplateCard).content;
-const cardsList = document.querySelector(classListCards);
-
-// --------------------------------------------------------------------------
-
-const likedCard = function (evt) {
-	evt.target.classList.toggle('card__like-button_is-active');
-};
-
-// --------------------------------------------------------------------------
-
-export const appendCard = function (card, deleteCard, likeCard) {
-	const element = cardTemplate.querySelector('.card').cloneNode(true);
-	const btnDelete = element.querySelector('.card__delete-button');
-	const image = element.querySelector('.card__image');
-	const like = element.querySelector('.card__like-button');
-	const title = element.querySelector('.card__title');
+export function create(card, removeCard, likeCard, openDialog, dialog) {
+	const element = cardTemplate.querySelector(classSelectorCard).cloneNode(true);
+	const btnDelete = element.querySelector(classSelectorCardButtonDelete);
+	const image = element.querySelector(classSelectorCardImage);
+	const like = element.querySelector(classSelectorCardButtonLike);
+	const title = element.querySelector(classSelectorCardTitle);
 
 	image.src = card.link;
 	image.alt = card.name;
 	title.textContent = card.name;
 
-	btnDelete.addEventListener('click', () => deleteCard(btnDelete));
+	image.addEventListener('click', (event) => openDialog(event, dialog));
+	btnDelete.addEventListener('click', () => removeCard(btnDelete));
 	like.addEventListener('click', likeCard);
 
 	return element;
-};
+}
 
-export const deleteCard = function (btn) {
-	const listItem = btn.closest('.places__item');
-	listItem.remove();
-};
+export function liked(evt) {
+	evt.target.classList.toggle(nameSelectorCardButtonLikeIsActive);
+}
 
-export const viewCards = function (list) {
-	list.forEach((el) => cardsList.append(appendCard(el, deleteCard, likedCard)));
-};
+export function remove(btn) {
+	btn.closest(classSelectorListWrapperItem).remove();
+}
