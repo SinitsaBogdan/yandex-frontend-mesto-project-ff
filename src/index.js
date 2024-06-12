@@ -43,13 +43,13 @@ function saveDialogProfileEdit(event, form, title, description) {
 
 function openDialogCardAdd(modal, form) {
 	Modal.open(modal);
-	form.place_name.focus();
+	form.name.focus();
 }
 
 function saveDialogCardAdd(event, form, list, appendCard) {
 	const dialog = Modal.searchOpenDialog()
 	const card = {
-		name: form.place_name.value,
+		name: form.name.value,
 		link: form.link.value,
 	};
 	event.preventDefault();
@@ -62,7 +62,7 @@ function openDialogCardView(evt, dialog) {
 	const card = evt.target.closest('.card');
 	const cardTitle = card.querySelector('.card__title').textContent;
 	const cardScr = card.querySelector('.card__image').src;
-	
+
 	dialogCardViewImage.src = cardScr;
 	dialogCardViewImage.alt = cardTitle;
 	dialogCardViewCaption.textContent = cardTitle;
