@@ -1,39 +1,67 @@
-const idSelectorTemplateCard = '#card-template';
-const classSelectorListWrapperItem = '.places__item';
-const classSelectorCard = '.card';
-const classSelectorCardImage = '.card__image';
-const classSelectorCardTitle = '.card__title';
-const classSelectorCardButtonLike = '.card__like-button';
-const classSelectorCardButtonDelete = '.card__delete-button';
+const config = {
+	templateCardSelector: '#card-template',
+	cardSelector: '.card',
+	imageSelector: '.card__image',
+	titleSelector: '.card__title',
+	likeButtonSelector: '.card__like-button',
+	likeIconSelector: '.card__like-svg',
+	likeCountSelector: '.card__like-count',
+	cardDeleteSelector: '.card__delete-button',
+	cardLikeActiveClass: 'card__like-button_is-active',
+};
 
-const nameSelectorCardButtonLikeIsActive = 'card__like-button_is-active';
-
-const cardTemplate = document.querySelector(idSelectorTemplateCard).content;
+const cardTemplate = document.querySelector(config.templateCardSelector).content;
 
 // --------------------------------------------------------------------------
 
-export function create(card, removeCard, likeCard, openDialog, dialog) {
-	const element = cardTemplate.querySelector(classSelectorCard).cloneNode(true);
-	const btnDelete = element.querySelector(classSelectorCardButtonDelete);
-	const image = element.querySelector(classSelectorCardImage);
-	const like = element.querySelector(classSelectorCardButtonLike);
-	const title = element.querySelector(classSelectorCardTitle);
+// Примечание: Метод создания нового объекта разметки карточки
+export function create(card, openDialogDeleteCard, funcLikeCard, openDialogViewCard, dialogViewCard, profileId) {
+	const element = cardTemplate.querySelector(config.cardSelector).cloneNode(true);
+	const title = element.querySelector(config.titleSelector);
+	const image = element.querySelector(config.imageSelector);
+	const btnCardDelete = element.querySelector(config.cardDeleteSelector);
+	const btnLike = element.querySelector(config.likeButtonSelector);
+	const btnLikeCount = btnLike.querySelector(config.likeCountSelector);
+	const btnLikeIcon = btnLike.querySelector(config.likeIconSelector);
 
+	console.log('profileId : ' + profileId);
+	console.log('card.owner._id : ' + card.owner._id);
+
+	if (profileId === card.owner._id) {
+		btnCardDelete.addEventListener('click', (event) => {
+			const card = event.target.closest('.card');
+			openDialogDeleteCard(card);
+		});
+	} else element.querySelector(config.cardDeleteSelector).remove();
+
+	if (isOwnerToLikedCard(card, profileId)) toggleIconActive(btnLikeIcon);
+
+	element.id = card._id;
 	image.src = card.link;
 	image.alt = card.name;
 	title.textContent = card.name;
+	btnLikeCount.textContent = card.likes.length;
 
-	image.addEventListener('click', (event) => openDialog(event, dialog));
-	btnDelete.addEventListener('click', () => removeCard(btnDelete));
-	like.addEventListener('click', likeCard);
+	image.addEventListener('click', (event) => openDialogViewCard(event, dialogViewCard));
 
+	btnLikeIcon.addEventListener('click', () => {
+		funcLikeCard(card, btnLikeCount, btnLikeIcon, toggleIconActive);
+		toggleIconActive(btnLikeIcon);
+	});
 	return element;
 }
 
-export function liked(evt) {
-	evt.target.classList.toggle(nameSelectorCardButtonLikeIsActive);
+// Примечание: Метод проверки наличия лайка у карточки
+export function isOwnerToLikedCard(card, profileId) {
+	return card.likes.filter((el) => el._id === profileId).length > 0;
 }
 
-export function remove(btn) {
-	btn.closest(classSelectorListWrapperItem).remove();
+// Примечание: Метод переключения состояния иконки лайка
+export function toggleIconActive(btnLikeSvg) {
+	btnLikeSvg.classList.toggle(config.cardLikeActiveClass);
+}
+
+// Примечание: Метод удаления карточки из разметки
+export function remove(card) {
+	card.remove();
 }

@@ -3,10 +3,10 @@
 	box-sizing: border-box;
 	width: 100%;
 	max-width: 430px;
-	min-height: 330px;
 	border-radius: 10px;
 	padding: 34px 36px;
 	background-color: #fff;
+	block-size: min-content;
 }
 
 @media screen and (max-width: 568px) {
