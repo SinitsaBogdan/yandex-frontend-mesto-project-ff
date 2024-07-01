@@ -1,28 +1,29 @@
-const classSelectorPopUpOpened = '.popup_is-opened';
-const nameSelectorPopUpOpened = classSelectorPopUpOpened.slice(1);
-let dialog;
+const config = {
+	popUpIsOpenSelector: '.popup_is-opened',
+	popUpIsOpenClass: 'popup_is-opened',
+};
 
-// --------------------------------------------------------------------------
-
-function closeDialogToKeyDownEsc (event) {
-    if (event.key === 'Escape') {
-        dialog = searchOpenDialog();
-        close(dialog)
-    };
+// Примечание: Метод закрытия модального окна по нажатию Escape
+function closeDialogToKeyDownEsc(event) {
+	if (event.key === 'Escape') {
+		const dialog = searchOpenDialog();
+		close(dialog);
+	}
 }
 
-// --------------------------------------------------------------------------
-
+// Примечание: Метод открытия модального окна
 export function open(dialog) {
-	dialog.classList.add(nameSelectorPopUpOpened);
+	dialog.classList.add(config.popUpIsOpenClass);
 	document.addEventListener('keydown', closeDialogToKeyDownEsc);
 }
 
+// Примечание: Метод закрытия модального окна
 export function close(dialog) {
-	dialog.classList.remove(nameSelectorPopUpOpened);
+	dialog.classList.remove(config.popUpIsOpenClass);
 	document.removeEventListener('keydown', closeDialogToKeyDownEsc);
 }
 
-export function searchOpenDialog () {
-	return document.querySelector(classSelectorPopUpOpened)
+// Примечание: Метод поиска открытого модального окна
+export function searchOpenDialog() {
+	return document.querySelector(config.popUpIsOpenSelector);
 }

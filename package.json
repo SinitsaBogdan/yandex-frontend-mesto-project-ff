@@ -2,8 +2,12 @@
 	"name": "yandex-frontend-mesto-project-ff",
 	"version": "1.0.0",
 	"description": "https://github.com/SinitsaBogdan/mesto-project-ff",
+	"homepage": "https://sinitsabogdan.github.io/yandex-frontend-mesto-project-ff/pages/home.html",
 	"main": "index.js",
 	"scripts": {
+		"install-lib": "npm install webpack webpack-cli webpack-dev-server html-webpack-plugin clean-webpack-plugin @babel/core @babel/preset-env core-js babel-loader css-loader mini-css-extract-plugin postcss-loader autoprefixer cssnano terser-webpack-plugin gh-pages --save-dev",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build",
 		"build": "webpack --mode production",
 		"dev": "webpack serve"
 	},
@@ -19,6 +23,7 @@
 		"core-js": "^3.37.1",
 		"css-loader": "^7.1.2",
 		"cssnano": "^7.0.2",
+		"gh-pages": "^6.1.1",
 		"html-webpack-plugin": "^5.6.0",
 		"mini-css-extract-plugin": "^2.9.0",
 		"postcss-loader": "^8.1.1",
