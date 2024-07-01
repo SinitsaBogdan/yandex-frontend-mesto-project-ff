@@ -1,0 +1,5 @@
+.popup__form_field {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}

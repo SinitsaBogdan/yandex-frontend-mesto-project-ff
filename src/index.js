@@ -1,7 +1,17 @@
 import * as Card from './scripts/card';
 import * as Modal from './scripts/modal';
+import { enableValidation, clearValidation } from './scripts/vadidations';
 import { initialCards } from './data/data-cards';
 import './styles/index.css';
+
+const validationConfig = {
+	formSelector: '.popup__form',
+	inputSelector: '.popup__input',
+	submitButtonSelector: '.popup__button',
+	inactiveButtonClass: 'popup__button_disabled',
+	inputErrorClass: 'popup__input_type_error',
+	errorClass: 'popup__error_visible',
+}
 
 const modals = document.querySelectorAll('.popup');
 const cardList = document.querySelector('.places__list');
@@ -19,7 +29,6 @@ const dialogCardView = document.querySelector('.popup_type_image');
 const dialogCardViewImage = dialogCardView.querySelector('.popup__image');
 const dialogCardViewCaption = dialogCardView.querySelector('.popup__caption');
 
-
 const formEdit = document.forms.edit_profile;
 const formAdd = document.forms.new_place;
 
@@ -33,7 +42,7 @@ function openDialogProfileEdit(modal, form, profileTitle, profileDescription) {
 }
 
 function saveDialogProfileEdit(event, form, title, description) {
-	const dialog = Modal.searchOpenDialog()
+	const dialog = Modal.searchOpenDialog();
 	event.preventDefault();
 	title.textContent = form.name.value;
 	description.textContent = form.description.value;
@@ -47,7 +56,7 @@ function openDialogCardAdd(modal, form) {
 }
 
 function saveDialogCardAdd(event, form, list, appendCard) {
-	const dialog = Modal.searchOpenDialog()
+	const dialog = Modal.searchOpenDialog();
 	const card = {
 		name: form.name.value,
 		link: form.link.value,
@@ -101,3 +110,5 @@ formAdd.addEventListener('submit', function (event) {
 	const args = [event, formAdd, cardList, Card.create, Card.remove];
 	saveDialogCardAdd(...args);
 });
+
+enableValidation(validationConfig);
