@@ -1,0 +1,31 @@
+@import url('./--active/card__button-like--active.css');
+
+.card__button-like {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	row-gap: 4px;
+	border: none;
+	background: transparent;
+	block-size: min-content;
+}
+
+.card__like-svg {
+	width: 21px;
+	height: 18px;
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-ms-transition: 0.3s;
+	-o-transition: 0.3s;
+	transition: 0.3s;
+	cursor: pointer;
+}
+
+.card__like-svg:hover {
+	opacity: 0.6;
+}
+
+.card__like-count {
+	font-size: 13px;
+}

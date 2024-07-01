@@ -1,9 +1,12 @@
 @import url('./__description/profile__description.css');
-@import url('./__add-button/profile__add-button.css');
-@import url('./__edit-button/profile__edit-button.css');
+@import url('./__button/-add/profile__button-add.css');
+@import url('./__button/-edit/profile__button-edit.css');
 @import url('./__info/profile__info.css');
 @import url('./__title/profile__title.css');
 @import url('./__image/profile__image.css');
+@import url('./__image/-edit/profile__image-edit.css');
+@import url('./__avatar/profile__avatar.css');
+
 
 .profile {
 	display: flex;

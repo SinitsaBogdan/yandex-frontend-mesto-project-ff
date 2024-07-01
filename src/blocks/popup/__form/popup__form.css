@@ -1,3 +1,5 @@
+@import url('./-field_error/popup__form-field_error.css');
+
 .popup__form {
 	margin-top: 27px;
 	display: flex;

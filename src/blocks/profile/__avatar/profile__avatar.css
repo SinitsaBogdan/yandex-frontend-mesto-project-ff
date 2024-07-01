@@ -1,0 +1,11 @@
+.profile__avatar {
+	position: relative;
+}
+
+.profile__avatar:hover .profile__image {
+	filter: opacity(20%);
+}
+
+.profile__avatar:hover .profile__image-edit {
+	opacity: 100%;
+}
