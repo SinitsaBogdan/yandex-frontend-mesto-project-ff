@@ -1,4 +1,5 @@
 .popup__form-field_error {
 	color: red;
 	font-size: 12px;
+	block-size: 1rem;
 }
