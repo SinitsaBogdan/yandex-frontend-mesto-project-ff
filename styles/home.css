@@ -31,7 +31,7 @@
 .popup__content{background-color:#fff;border-radius:10px;box-sizing:border-box;max-width:430px;padding:34px 36px;position:relative;width:100%;block-size:-moz-min-content;block-size:min-content}.popup__content--isImage{background:transparent;background-size:cover;border-radius:0;display:flex;height:auto;max-height:75vh;max-width:75vw;padding:0;width:auto}@media screen and (max-width:568px){.popup__content{margin-top:40px;max-width:calc(100% - 80px);padding:30px 20px;width:100%}}
 .popup__close{background:transparent url(../images/close.svg) 50% no-repeat;background-size:35px 35px;border:none;cursor:pointer;height:35px;margin:0;padding:0;position:absolute;right:-34px;top:-36px;transform:rotate(90deg);transition:visibility 0s,opacity .3s;width:35px}.popup__close:hover{opacity:.6}
 .popup__title{font-size:24px;line-height:30px;margin:0}@media screen and (max-width:568px){.popup__title{font-size:18px;line-height:22px}}
-.popup__form-field_error{color:red;font-size:12px}
+.popup__form-field_error{block-size:1rem;color:red;font-size:12px}
 .popup__form{display:flex;flex-direction:column;margin-top:27px;row-gap:10px}
 .popup__label{display:flex;flex-direction:column;row-gap:10px}
 .popup__input-type_error{border-bottom:1px solid red!important}
