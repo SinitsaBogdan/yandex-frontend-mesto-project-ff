@@ -16,16 +16,13 @@ const cardTemplate = document.querySelector(config.templateCardSelector).content
 
 // Примечание: Метод создания нового объекта разметки карточки
 export function create(card, openDialogDeleteCard, funcLikeCard, openDialogViewCard, dialogViewCard, profileId) {
-	const element = cardTemplate.querySelector(config.cardSelector).cloneNode(true);
+	const element = getCardTemplate(config.cardSelector);
 	const title = element.querySelector(config.titleSelector);
 	const image = element.querySelector(config.imageSelector);
 	const btnCardDelete = element.querySelector(config.cardDeleteSelector);
 	const btnLike = element.querySelector(config.likeButtonSelector);
 	const btnLikeCount = btnLike.querySelector(config.likeCountSelector);
 	const btnLikeIcon = btnLike.querySelector(config.likeIconSelector);
-
-	console.log('profileId : ' + profileId);
-	console.log('card.owner._id : ' + card.owner._id);
 
 	if (profileId === card.owner._id) {
 		btnCardDelete.addEventListener('click', (event) => {
@@ -64,4 +61,8 @@ export function toggleIconActive(btnLikeSvg) {
 // Примечание: Метод удаления карточки из разметки
 export function remove(card) {
 	card.remove();
+}
+
+function getCardTemplate(selector) {
+	return cardTemplate.querySelector(selector).cloneNode(true);
 }
