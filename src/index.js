@@ -6,6 +6,16 @@ import './styles/index.css';
 
 const profileConfig = {};
 
+const validationConfig = {
+	formSelector: '.popup__form',
+	inputSelector: '.popup__input',
+	errorSelector: '.popup__form-field_error',
+	submitButtonSelector: '.popup__button',
+	errorClass: 'popup__error_visible',
+	inputErrorClass: 'popup__input-type_error',
+	inactiveButtonClass: 'popup__button-disabled',
+};
+
 const modals = document.querySelectorAll('.popup');
 const cardListSelector = document.querySelector('.places__list');
 const avatarSelector = document.querySelector('.profile__image');
@@ -39,8 +49,8 @@ function loadPage() {
 	const requests = [];
 	const getProfilePromise = new Promise((resolve) => resolve(api.getProfile()));
 	const getCardsPromise = new Promise((resolve) => resolve(api.getCards()));
-	requests.push(getProfilePromise)
-	requests.push(getCardsPromise)
+	requests.push(getProfilePromise);
+	requests.push(getCardsPromise);
 
 	Promise.all(requests)
 		.then(([responseProfile, responseCards]) => {
@@ -50,7 +60,7 @@ function loadPage() {
 			profileDescription.textContent = profileConfig.about;
 			profileAvatar.src = profileConfig.avatar;
 		})
-		.catch((err) => console.log(err))
+		.catch((err) => console.log(err));
 }
 
 // Примечание : Отрисовка Профиля пользователя
@@ -71,7 +81,7 @@ function loadCards(data) {
 
 // Примечание : Открытие PopUp
 function openDialog(modal, form) {
-	clearValidation(form);
+	clearValidation(form, validationConfig);
 	Modal.open(modal);
 }
 
@@ -79,7 +89,7 @@ function openDialog(modal, form) {
 function openDialogDeleteCard(card) {
 	const submit = dialogDeleteCard.querySelector('.popup__button');
 	Modal.open(dialogDeleteCard);
-	btnDeleteCard.addEventListener('click', () => confirmationDeleteCard(card, dialogDeleteCard, submit))
+	btnDeleteCard.addEventListener('click', () => confirmationDeleteCard(card, dialogDeleteCard, submit));
 }
 
 // Примечание : Метод удаления карточки
@@ -87,12 +97,12 @@ function confirmationDeleteCard(card, dialog, submit) {
 	submit.textContent = 'Сохранение...';
 	new Promise(() => {
 		api.deleteCard(card.id)
-			.catch((err) => console.log(err))
-			.finally(() => {
+			.then(() => {
 				Card.remove(card);
 				Modal.close(dialog);
 				submit.textContent = 'Сохранение';
-			});
+			})
+			.catch((err) => console.log(err));
 	});
 }
 
@@ -119,12 +129,11 @@ function saveDialogEditProfile(event, form, title, description) {
 	description.textContent = about;
 	new Promise(() => {
 		api.patchProfile(name, about)
-			.catch((err) => console.log(err))
-			.finally(() => {
+			.then(() => {
 				Modal.close(dialog);
-				clearValidation(form);
 				btn.textContent = 'Сохранение';
-			});
+			})
+			.catch((err) => console.log(err));
 	});
 }
 
@@ -138,17 +147,16 @@ function saveDialogAddCard(event, form, cardListSelector) {
 	const btn = dialog.querySelector('.popup__button');
 	btn.textContent = 'Сохранение...';
 	event.preventDefault();
-	api.postCard(card)
-		.then((res) => {
-			const card = Card.create(res, openDialogDeleteCard, likedCard, openDialogViewCard, dialogCardView, profileConfig.id);
-			cardListSelector.insertBefore(card, cardListSelector.firstElementChild);
-		})
-		.catch((err) => console.log(err))
-		.finally(() => {
-			clearValidation(form);
-			Modal.close(dialog);
-			btn.textContent = 'Сохранение';
-		});
+	new Promise(() => {
+		api.postCard(card)
+			.then((res) => {
+				const card = Card.create(res, openDialogDeleteCard, likedCard, openDialogViewCard, dialogCardView, profileConfig.id);
+				cardListSelector.insertBefore(card, cardListSelector.firstElementChild);
+				Modal.close(dialog);
+				btn.textContent = 'Сохранение';
+			})
+			.catch((err) => console.log(err));
+	});
 }
 
 // Примечание : Метод постановки лайка
@@ -183,12 +191,12 @@ function updateProfileAvatar(event, form, selector) {
 	event.preventDefault();
 	new Promise(() => {
 		api.patchProfileAvatar(link)
-			.then(() => (selector.src = link))
-			.catch((err) => console.log(err))
-			.finally(() => {
+			.then(() => {
+				selector.src = link;
 				Modal.close(dialog);
 				btn.textContent = 'Сохранение';
-			});
+			})
+			.catch((err) => console.log(err));
 	});
 }
 
@@ -243,4 +251,4 @@ formEditAvatar.addEventListener('submit', function (event) {
 // RUN PAGE --------------------------------------------------------------------------
 
 loadPage();
-enableValidation(document.forms);
+enableValidation(document.forms, validationConfig);
