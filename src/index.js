@@ -46,13 +46,7 @@ const formAddCard = document.forms.new_place;
 
 // Примечание: Метод первичной обработки странице при первой загрузке
 function loadPage() {
-	const requests = [];
-	const getProfilePromise = new Promise((resolve) => resolve(api.getProfile()));
-	const getCardsPromise = new Promise((resolve) => resolve(api.getCards()));
-	requests.push(getProfilePromise);
-	requests.push(getCardsPromise);
-
-	Promise.all(requests)
+	Promise.all([api.getProfile(), api.getCards()])
 		.then(([responseProfile, responseCards]) => {
 			loadProfilePage(responseProfile);
 			loadCards(responseCards);
@@ -95,15 +89,13 @@ function openDialogDeleteCard(card) {
 // Примечание : Метод удаления карточки
 function confirmationDeleteCard(card, dialog, submit) {
 	submit.textContent = 'Сохранение...';
-	new Promise(() => {
-		api.deleteCard(card.id)
-			.then(() => {
-				Card.remove(card);
-				Modal.close(dialog);
-				submit.textContent = 'Сохранение';
-			})
-			.catch((err) => console.log(err));
-	});
+	api.deleteCard(card.id)
+		.then(() => {
+			Card.remove(card);
+			Modal.close(dialog);
+			submit.textContent = 'Сохранение';
+		})
+		.catch((err) => console.log(err));
 }
 
 // Примечание : Открытие PopUp просмотра карточки
@@ -127,14 +119,10 @@ function saveDialogEditProfile(event, form, title, description) {
 	event.preventDefault();
 	title.textContent = name;
 	description.textContent = about;
-	new Promise(() => {
-		api.patchProfile(name, about)
-			.then(() => {
-				Modal.close(dialog);
-				btn.textContent = 'Сохранение';
-			})
-			.catch((err) => console.log(err));
-	});
+	api.patchProfile(name, about)
+		.then(() => Modal.close(dialog))
+		.catch((err) => console.log(err))
+		.finally(() => (btn.textContent = 'Сохранить'));
 }
 
 // Примечание : Метод сохранения карточки после редактирования
@@ -153,26 +141,22 @@ function saveDialogAddCard(event, form, cardListSelector) {
 				const card = Card.create(res, openDialogDeleteCard, likedCard, openDialogViewCard, dialogCardView, profileConfig.id);
 				cardListSelector.insertBefore(card, cardListSelector.firstElementChild);
 				Modal.close(dialog);
-				btn.textContent = 'Сохранение';
 			})
-			.catch((err) => console.log(err));
+			.catch((err) => console.log(err))
+			.finally(() => (btn.textContent = 'Сохранить'));
 	});
 }
 
 // Примечание : Метод постановки лайка
 function likedCard(card, count) {
 	if (Card.isOwnerToLikedCard(card, profileConfig.id)) {
-		new Promise(() => {
-			api.deleteLikeCard(card._id)
-				.then((res) => updateLikedCard(res, card, count))
-				.catch((err) => console.log(err));
-		});
+		api.deleteLikeCard(card._id)
+			.then((res) => updateLikedCard(res, card, count))
+			.catch((err) => console.log(err));
 	} else {
-		new Promise(() => {
-			api.putLikeCard(card._id)
-				.then((res) => updateLikedCard(res, card, count))
-				.catch((err) => console.log(err));
-		});
+		api.putLikeCard(card._id)
+			.then((res) => updateLikedCard(res, card, count))
+			.catch((err) => console.log(err));
 	}
 }
 
@@ -189,15 +173,13 @@ function updateProfileAvatar(event, form, selector) {
 	const btn = dialog.querySelector('.popup__button');
 	btn.textContent = 'Сохранение...';
 	event.preventDefault();
-	new Promise(() => {
-		api.patchProfileAvatar(link)
-			.then(() => {
-				selector.src = link;
-				Modal.close(dialog);
-				btn.textContent = 'Сохранение';
-			})
-			.catch((err) => console.log(err));
-	});
+	api.patchProfileAvatar(link)
+		.then(() => {
+			selector.src = link;
+			Modal.close(dialog);
+		})
+		.catch((err) => console.log(err))
+		.finally(() => (btn.textContent = 'Сохранить'));
 }
 
 // EVENTS --------------------------------------------------------------------------
