@@ -13,23 +13,15 @@
 
 > ## 📜 Описание проета
 >
-> Lorem ipsum dolor sit amet consectetur adipisicing elit.
-> Accusamus vitae ex praesentium deserunt autem, ut veritatis expedita dolore.
-> Deleniti obcaecati enim dolores odio quos minus corporis nobis eligendi reprehenderit velit.
+> Приложение для публикации карточек с фотографиями.
 >
-> #### Что он делает
+> ### Что он делает
 >
 > Lorem ipsum dolor sit amet consectetur adipisicing elit.
 > Accusamus vitae ex praesentium deserunt autem, ut veritatis expedita dolore.
 > Deleniti obcaecati enim dolores odio quos minus corporis nobis eligendi reprehenderit velit.
 >
-> #### Какую задачу решает
->
-> Lorem ipsum dolor sit amet consectetur adipisicing elit.
-> Accusamus vitae ex praesentium deserunt autem, ut veritatis expedita dolore.
-> Deleniti obcaecati enim dolores odio quos minus corporis nobis eligendi reprehenderit velit.
->
-> #### Какую боль закрывает
+> ### Какую задачу решает
 >
 > Lorem ipsum dolor sit amet consectetur adipisicing elit.
 > Accusamus vitae ex praesentium deserunt autem, ut veritatis expedita dolore.
@@ -37,55 +29,66 @@
 
 ---
 
-> ### 📣 Оглавление
+> ## 📣 Оглавление
 >
 > 1. [Описание проекта](#-описание-проета)
-> 3. [Инструкция по локальному развертыванию](#-инструкция-по-локальному-развертыванию)
-> 4. [Планы и Задачи по доработке проекта](#️-планы-и-задачи-по-доработке-проекта)
-> 5. [Баги](#-баги)
-> 6. [Команды в проекте](#-команды-в-проекте)
-> 7. [История изменений](#-история-изменений)
-> 8. [Документация](https://github.com/SinitsaBogdan/yandex-frontend-mesto-project-ff/wiki)
+> 2. [Инструкция по локальному развертыванию](#-инструкция-по-локальному-развертыванию)
+> 3. [Планы и Задачи по доработке проекта](#️-планы-и-задачи-по-доработке-проекта)
+> 4. [Баги](#-баги)
+> 5. [Команды в проекте](#-команды-в-проекте)
+> 6. [История изменений](#-история-изменений)
+> 7. [Документация](https://github.com/SinitsaBogdan/yandex-frontend-mesto-project-ff/wiki)
 
 ---
 
-> ### 🚀 Инструкция по локальному развертыванию
+> ## 🚀 Инструкция по локальному развертыванию
+>
+> 1. Склонировать проект с [репозитория](https://github.com/SinitsaBogdan/yandex-frontend-mesto-project-ff).
+> 2. Установить библиотеку npm `npm install -g npm` если её нет и `Node.js`. [Ссылка на документациию](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
+> 3. Запустить команду `npm run install-lib`.
+> 4. Запустить локальную сборку и сервер, командой `npm run dev`.
+
+---
+
+> ## 🤹‍♂️ Планы и Задачи по доработке проекта
+>
+> ### _Реализация авторизации в приложении_
 >
 > Lorem ipsum dolor sit amet consectetur adipisicing elit.
 > Accusamus vitae ex praesentium deserunt autem, ut veritatis expedita dolore.
 > Deleniti obcaecati enim dolores odio quos minus corporis nobis eligendi reprehenderit velit.
-> Lorem ipsum dolor sit amet consectetur adipisicing elit.
-> Accusamus vitae ex praesentium deserunt autem, ut veritatis expedita dolore.
-> Deleniti obcaecati enim dolores odio quos minus corporis nobis eligendi reprehenderit velit.
-
----
-
-> ### 🤹‍♂️ Планы и Задачи по доработке проекта
+>
+> ### _Перенос проекта на Файловую Базу данных_
 >
 > Lorem ipsum dolor sit amet consectetur adipisicing elit.
 > Accusamus vitae ex praesentium deserunt autem, ut veritatis expedita dolore.
 > Deleniti obcaecati enim dolores odio quos minus corporis nobis eligendi reprehenderit velit.
-> Lorem ipsum dolor sit amet consectetur adipisicing elit.
-> Accusamus vitae ex praesentium deserunt autem, ut veritatis expedita dolore.
-> Deleniti obcaecati enim dolores odio quos minus corporis nobis eligendi reprehenderit velit.
-> Lorem ipsum dolor sit amet consectetur adipisicing elit.
-> Accusamus vitae ex praesentium deserunt autem, ut veritatis expedita dolore.
-> Deleniti obcaecati enim dolores odio quos minus corporis nobis eligendi reprehenderit velit.
-
----
-
-> ### 🐛 Баги
+>
+> ### _Создание микро сервиса для собственного API_
 >
 > Lorem ipsum dolor sit amet consectetur adipisicing elit.
 > Accusamus vitae ex praesentium deserunt autem, ut veritatis expedita dolore.
 > Deleniti obcaecati enim dolores odio quos minus corporis nobis eligendi reprehenderit velit.
+>
+> ### _Реализация мобильной адаптации_
+>
 > Lorem ipsum dolor sit amet consectetur adipisicing elit.
 > Accusamus vitae ex praesentium deserunt autem, ut veritatis expedita dolore.
 > Deleniti obcaecati enim dolores odio quos minus corporis nobis eligendi reprehenderit velit.
 
 ---
 
-> ### 💻 Команды в проекте
+> ## 🐛 Баги
+>
+> ### При просмотре на мобильном не приложение открывается в полном расширении.
+>
+> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+> Accusamus vitae ex praesentium deserunt autem, ut veritatis expedita dolore.
+> Deleniti obcaecati enim dolores odio quos minus corporis nobis eligendi reprehenderit velit.
+
+---
+
+> ## 💻 Команды в проекте
 
 > Скачивание и установка библиотек и зависимостей
 
@@ -111,7 +114,7 @@ npm run dev
 
 ---
 
-> Сборка проекта и публикация на GitHub Pages [localhost:8080](http://localhost:8080/pages/home.html)
+> Сборка проекта и публикация на GitHub Pages
 
 ```
 npm run deploy
@@ -119,10 +122,12 @@ npm run deploy
 
 ---
 
-> ### 📦 История изменений
+> ## 📦 История изменений
 >
-> Lorem ipsum dolor sit amet consectetur adipisicing elit.
-> Accusamus vitae ex praesentium deserunt autem, ut veritatis expedita dolore.
-> Deleniti obcaecati enim dolores odio quos minus corporis nobis eligendi reprehenderit velit.
+> ### V.1.0.0 - Релиз MVP
+>
+> Реализован функционал редактирования профиля, добавления \ удаления карточек а так же изменения афатара пользователя.
+> Внедрен API с внешней Базой данных для демонстрации функционала.
+> Релизована система лайков для карточки и подсчет их количества.
 
 ---
