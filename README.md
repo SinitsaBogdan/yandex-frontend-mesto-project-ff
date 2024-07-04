@@ -40,7 +40,6 @@
 > ### 📣 Оглавление
 >
 > 1. [Описание проекта](#-описание-проета)
-> 2. [Структура папок и файлов](#структура-папок-и-файлов)
 > 3. [Инструкция по локальному развертыванию](#-инструкция-по-локальному-развертыванию)
 > 4. [Планы и Задачи по доработке проекта](#️-планы-и-задачи-по-доработке-проекта)
 > 5. [Баги](#-баги)
@@ -50,49 +49,11 @@
 
 ---
 
-> ### Структура папок и файлов
-
-```
-├── build                           # Сборка проекта
-├── node_modules                    # Библиотеки npm
-├── src                             # Главная директория проекта
-|   ├── blocks                      # Компоненты
-|   |   ├──
-|   |   ├──
-|   ├── images                      # Изображения в проекте ( стоит отделить растр от вектора )
-|   ├── scripts                     # Модульные скрипты используемые в проекте
-|   |   ├── api.js                  # Методы API
-|   |   ├── card.js                 # Модуль создания и работы с карточками
-|   |   ├── modal.js                # Модуль взаимодействия с модальными окнами
-|   |   ├── validation.js           # Модуль валидации форм
-|   ├── styles                      # Папка для главных файлов стилей
-|   |   ├── index.css               # Подключение стилей для index.css
-|   ├── shared                      # Папка для общих фалов
-|   |   ├── fonts                   # Хранилище для шрифтов
-|   |   ├── fonts.css               # Файл подключения шрифтов из папки fonts
-|   |   ├── normalize.css           # Файл сброса стилей
-|   ├── webpack                     # Папка конфигурационных файлов Webpack
-|   |   ├── base.config.js          # Файл шаблонной конфигурации Webpack
-|   |   ├── constants.js            # Константы используемые Webpack
-|   |   ├── multipage.config.js     # Файл настройки сборки страниц в проекте
-|   |   ├── plugins.config.js       # Плагины используемые в Webpack
-|   ├── index.html                  # Главная страница верстки проекта
-|   ├── index.js                    # Главный файл скриптов
-├── .gitignore                      # Правила игнорирования файлов GitHub
-├── .prettierrc                     # Конфигурация Prettierrc
-├── babel.config.js                 # Конфигурация Babel
-├── package-lock.json               # Зависимости в проекте
-├── package.json                    # Конфигурация проекта
-├── postcss.config.js               # Конфигурация Postcss
-├── webpack.config.js               # Конфигурация Webpack
-├── README.md                       # Описание проекта
-
-```
-
----
-
 > ### 🚀 Инструкция по локальному развертыванию
 >
+> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+> Accusamus vitae ex praesentium deserunt autem, ut veritatis expedita dolore.
+> Deleniti obcaecati enim dolores odio quos minus corporis nobis eligendi reprehenderit velit.
 > Lorem ipsum dolor sit amet consectetur adipisicing elit.
 > Accusamus vitae ex praesentium deserunt autem, ut veritatis expedita dolore.
 > Deleniti obcaecati enim dolores odio quos minus corporis nobis eligendi reprehenderit velit.
@@ -104,11 +65,20 @@
 > Lorem ipsum dolor sit amet consectetur adipisicing elit.
 > Accusamus vitae ex praesentium deserunt autem, ut veritatis expedita dolore.
 > Deleniti obcaecati enim dolores odio quos minus corporis nobis eligendi reprehenderit velit.
+> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+> Accusamus vitae ex praesentium deserunt autem, ut veritatis expedita dolore.
+> Deleniti obcaecati enim dolores odio quos minus corporis nobis eligendi reprehenderit velit.
+> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+> Accusamus vitae ex praesentium deserunt autem, ut veritatis expedita dolore.
+> Deleniti obcaecati enim dolores odio quos minus corporis nobis eligendi reprehenderit velit.
 
 ---
 
 > ### 🐛 Баги
 >
+> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+> Accusamus vitae ex praesentium deserunt autem, ut veritatis expedita dolore.
+> Deleniti obcaecati enim dolores odio quos minus corporis nobis eligendi reprehenderit velit.
 > Lorem ipsum dolor sit amet consectetur adipisicing elit.
 > Accusamus vitae ex praesentium deserunt autem, ut veritatis expedita dolore.
 > Deleniti obcaecati enim dolores odio quos minus corporis nobis eligendi reprehenderit velit.
@@ -125,7 +95,7 @@ npm run install-lib
 
 ---
 
-> Лакальная сборка проекта в папку build
+> Локальная сборка проекта в папку build
 
 ```
 npm run build
