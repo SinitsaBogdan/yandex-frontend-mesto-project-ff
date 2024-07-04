@@ -1,0 +1,15 @@
+@import url('./styles/__img/Logo__img.css');
+
+.Logo {
+	inline-size: 142px;
+	block-size: 33px;
+	object-fit: contain;
+}
+
+@media screen and (max-width: 480px) {
+	.Logo {
+		inline-size: 104px;
+		block-size: 24px;
+		margin: 0 0 0 7px;
+	}
+}

@@ -1,0 +1,21 @@
+/* GLOBAL ---------------------------------------------------- */
+@import url('../../shared/normalize.css');
+@import url('../../shared/fonts.css');
+@import url('../../shared/global.css');
+
+/* COMPONENTS ------------------------------------------------ */
+@import url('../../shared/components/logo/Logo.css');
+@import url('../../shared/components/like/Like.css');
+@import url('../../entities/card/Card.css');
+@import url('../../widgets/header/Header.css');
+@import url('../../widgets/footer/Footer.css');
+@import url('../../widgets/profile/Profile.css');
+@import url('../../widgets/places/Places.css');
+
+/* POPUP ----------------------------------------------------- */
+@import url('../../widgets/popup/PopUp.css');
+@import url('../../widgets/popup/avatar/edit/PopUpAvatarEdit.css');
+@import url('../../widgets/popup/card/create/PopUpCardCreate.css');
+@import url('../../widgets/popup/card/delete/PopUpCardDelete.css');
+@import url('../../widgets/popup/image/view/PopUpImageView.css');
+@import url('../../widgets/popup/profile/edit/PopUpProfileEdit.css');

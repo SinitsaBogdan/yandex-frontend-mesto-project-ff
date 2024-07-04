@@ -1,0 +1,8 @@
+.PopUp--animated {
+	visibility: hidden;
+	display: flex;
+	opacity: 0;
+	transition: visibility 0s 0.6s, opacity 0.6s;
+	pointer-events: none;
+	user-select: none;
+}

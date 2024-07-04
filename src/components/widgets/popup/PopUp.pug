@@ -1,0 +1,13 @@
+block variables
+    - var popUpClass = '';
+    - var popUpTitle = '';
+    - var popUpButton = '';
+    - var popUpContentModification = '';
+
+dialog(class="PopUp PopUp--animated " + popUpClass)
+    div(class="PopUp__content " + popUpContentModification)
+        button(class="PopUp__close" type="button")
+        h3(class="PopUp__title")
+
+        block Form
+        block Content

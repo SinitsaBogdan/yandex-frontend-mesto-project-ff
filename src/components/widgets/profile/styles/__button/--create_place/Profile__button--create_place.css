@@ -1,0 +1,27 @@
+.Profile__button--create_place {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-inline-start: auto;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	background: transparent url('../../../../../../assets/svg/add-place.svg') center no-repeat;
+	background-size: 22px;
+	inline-size: 150px;
+	block-size: 70px;
+}
+
+@media screen and (max-width: 740px) {
+	.Profile__button--create_place {
+		inline-size: 70px;
+		block-size: 70px;
+	}
+}
+
+@media screen and (max-width: 636px) {
+	.Profile__button--create_place {
+		inline-size: 90%;
+		margin-inline-start: 0;
+	}
+}

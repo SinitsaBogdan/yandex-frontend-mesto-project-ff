@@ -1,0 +1,10 @@
+.Card__title {
+	margin: 0;
+	overflow: hidden;
+	font-size: 24px;
+	color: black;
+	line-height: 29px;
+	text-overflow: ellipsis;
+	max-inline-size: 220px;
+	white-space: nowrap;
+}

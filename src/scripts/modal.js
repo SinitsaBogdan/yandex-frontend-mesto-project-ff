@@ -1,6 +1,6 @@
 const config = {
-	popUpIsOpenSelector: '.popup_is-opened',
-	popUpIsOpenClass: 'popup_is-opened',
+	popUpIsOpenSelector: '.PopUp--opened',
+	popUpIsOpenClass: 'PopUp--opened',
 };
 
 // Примечание: Метод закрытия модального окна по нажатию Escape

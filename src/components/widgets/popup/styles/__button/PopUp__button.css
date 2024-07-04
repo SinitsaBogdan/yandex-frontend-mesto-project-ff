@@ -1,0 +1,21 @@
+@import url('./--disabled/PopUp__button--disabled.css');
+
+.PopUp__button {
+	margin-block-start: 38px;
+	font-size: 18px;
+	line-height: 22px;
+	background-color: #000;
+}
+.PopUp__button:hover {
+	opacity: 80%;
+	color: #fff;
+	background: rgba(0, 0, 0);
+	cursor: pointer;
+}
+
+@media screen and (max-width: 568px) {
+	.PopUp__button {
+		font-size: 14px;
+		line-height: 17px;
+	}
+}

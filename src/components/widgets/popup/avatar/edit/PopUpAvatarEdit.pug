@@ -1,0 +1,26 @@
+extends ../../PopUp
+
+block variables
+    - var popUpClass = 'PopUpAvatarEdit';
+    - var popUpTitle = 'Обновить аватар';
+    - var popUpButton = 'Сохранить';
+    - var popUpContentModification = '';
+
+block Form
+    form(class="PopUp__form" name="avatar_edit")
+        label(class="PopUp__label")
+            input(
+                data-error-type="Введите ссылку на изображение."
+                data-error-empty="Вы пропустили это поле."
+                type="url"
+                name="link"
+                class="popup__input"
+                id="avatar-input-name"
+                placeholder="Ссылка на изображение"
+                required
+            )
+            span(
+                id="avatar-input-name-error"
+                class="PopUp__form--error"
+            )
+        button(type="submit" class="Button PopUp__button") #{popUpButton}

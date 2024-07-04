@@ -1,0 +1,18 @@
+@import url('./--edit/Profile__image--edit.css');
+
+.Profile__image {
+	margin-inline-end: 29px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	object-fit: cover;
+	object-position: center;
+	inline-size: 120px;
+	block-size: 120px;
+}
+
+@media screen and (max-width: 740px) {
+	.Profile__image {
+		margin-inline-end: 0;
+	}
+}

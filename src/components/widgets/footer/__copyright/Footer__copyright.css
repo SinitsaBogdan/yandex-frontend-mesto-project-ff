@@ -1,0 +1,12 @@
+.Footer__copyright {
+	color: #545454;
+	font-size: 18px;
+	line-height: 22px;
+}
+
+@media screen and (max-width: 568px) {
+	.Footer__copyright {
+		font-size: 14px;
+		line-height: 17px;
+	}
+}

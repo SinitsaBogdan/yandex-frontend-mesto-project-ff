@@ -1,0 +1,17 @@
+.Card__image {
+	display: flex;
+	object-fit: cover;
+	object-position: center;
+	inline-size: 100%;
+	block-size: 282px;
+}
+
+.Card__image:hover {
+	cursor: pointer;
+}
+
+@media screen and (max-width: 636px) {
+	.Card__image {
+		block-size: 32vh;
+	}
+}

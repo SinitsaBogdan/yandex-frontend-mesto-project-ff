@@ -1,0 +1,44 @@
+extends ../../PopUp
+
+block variables
+    - var popUpClass = 'PopUpCardCreate';
+    - var popUpTitle = 'Новое место';
+    - var popUpButton = 'Сохранить';
+    - var popUpContentModification = '';
+
+block Form
+    form(class="PopUp__form" name="place_create")
+        label(class="PopUp__label")
+            input(
+                data-error-pattern="Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы."
+                data-error-empty="Вы пропустили это поле."
+                pattern="^[a-zA-Zа-яёА-ЯЁ\s\-]+$"
+                type="text"
+                name="name"
+                class="popup__input"
+                id="place-input-name"
+                placeholder="Название"
+                minlength="2"
+                maxlength="30"
+                required
+            )
+            span(
+                id="place-input-name-error"
+                class="PopUp__form--error"
+            )
+        label(class="PopUp__label")
+            input(
+                data-error-type="Введите адрес сайта."
+                data-error-empty="Вы пропустили это поле."
+                type="url"
+                name="link"
+                class="popup__input"
+                id="place-input-link"
+                placeholder="Ссылка на картинку"
+                required
+            )
+            span(
+                id="place-input-link-error"
+                class="PopUp__form--error"
+            )
+        button(type="submit" class="Button PopUp__button") #{popUpButton}

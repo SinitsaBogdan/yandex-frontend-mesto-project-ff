@@ -1,0 +1,38 @@
+.Page {
+	font-family: 'Inter', Arial, sans-serif;
+}
+.Section {
+	position: relative;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0 auto;
+	inline-size: 100%;
+	max-inline-size: 882px;
+}
+.Content {
+	flex-grow: 1;
+	flex-shrink: 0;
+}
+.List {
+}
+.Link {
+}
+.Button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	inline-size: 100%;
+	block-size: 50px;
+	border: 1px solid transparent;
+	border-radius: 2px;
+	color: white;
+	background: #000;
+	transition: visibility 0s, background 0.3s;
+}
+
+@media screen and (max-width: 1140px) {
+	.Section {
+		inline-size: calc(100% - 40px);
+	}
+}

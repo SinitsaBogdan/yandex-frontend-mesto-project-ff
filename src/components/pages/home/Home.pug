@@ -1,0 +1,20 @@
+extends ../../base
+
+block variables
+    - var title = 'Mesto - Home';
+
+block content
+
+    //- Sections
+    include ../../widgets/profile/Profile.pug
+    include ../../widgets/places/Places.pug
+
+    //- PopUp
+    include ../../widgets/popup/avatar/edit/PopUpAvatarEdit.pug
+    include ../../widgets/popup/card/create/PopUpCardCreate.pug
+    include ../../widgets/popup/card/delete/PopUpCardDelete.pug
+    include ../../widgets/popup/image/view/PopUpImageView.pug
+    include ../../widgets/popup/profile/edit/PopUpProfileEdit.pug
+
+    //- Template
+    include ../../entities/card/Card.pug

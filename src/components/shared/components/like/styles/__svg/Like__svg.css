@@ -1,0 +1,14 @@
+.Like__svg {
+	inline-size: 21px;
+	block-size: 18px;
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-ms-transition: 0.3s;
+	-o-transition: 0.3s;
+	transition: 0.3s;
+	cursor: pointer;
+}
+
+.Like__svg-svg:hover {
+	opacity: 0.6;
+}

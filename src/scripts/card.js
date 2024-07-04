@@ -1,13 +1,13 @@
 const config = {
 	templateCardSelector: '#card-template',
-	cardSelector: '.card',
-	imageSelector: '.card__image',
-	titleSelector: '.card__title',
-	likeButtonSelector: '.card__button-like',
-	likeIconSelector: '.card__like-svg',
-	likeCountSelector: '.card__like-count',
-	cardDeleteSelector: '.card__button-delete',
-	cardLikeActiveClass: 'card__button-like--active',
+	cardSelector: '.Card',
+	imageSelector: '.Card__image',
+	titleSelector: '.Card__title',
+	cardDeleteSelector: '.Card__delete',
+	likeButtonSelector: '.Like',
+	cardLikeActiveClass: 'Like--active',
+	likeIconSelector: '.Like__svg',
+	likeCountSelector: '.Like__count',
 };
 
 const cardTemplate = document.querySelector(config.templateCardSelector).content;
@@ -26,7 +26,7 @@ export function create(card, openDialogDeleteCard, funcLikeCard, openDialogViewC
 
 	if (profileId === card.owner._id) {
 		btnCardDelete.addEventListener('click', (event) => {
-			const card = event.target.closest('.card');
+			const card = event.target.closest(config.cardSelector);
 			openDialogDeleteCard(card);
 		});
 	} else element.querySelector(config.cardDeleteSelector).remove();

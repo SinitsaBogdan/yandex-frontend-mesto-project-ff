@@ -1,0 +1,21 @@
+@import url('./--isImage/popup__content--isImage.css');
+
+.PopUp__content {
+	position: relative;
+	box-sizing: border-box;
+	border-radius: 10px;
+	padding-block: 34px 36px;
+	background-color: #fff;
+	inline-size: 100%;
+	max-inline-size: 430px;
+	block-size: min-content;
+}
+
+@media screen and (max-width: 568px) {
+	.PopUp__content {
+		inline-size: 100%;
+		max-inline-size: calc(100% - 80px);
+		margin-block-start: 40px;
+		padding-block: 30px 20px;
+	}
+}

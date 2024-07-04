@@ -1,0 +1,12 @@
+@import url('./styles/__image/Card__image.css');
+@import url('./styles/__delete/Card__delete.css');
+@import url('./styles/__description/Card__description.css');
+@import url('./styles/__title/Card__title.css');
+
+.Card {
+	position: relative;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	overflow: hidden;
+}

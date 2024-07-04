@@ -1,0 +1,14 @@
+.popup__content--isImage {
+	display: flex;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	padding: 0;
+	background: transparent;
+	-webkit-background-size: cover;
+	background-size: cover;
+	inline-size: auto;
+	max-inline-size: 75vw;
+	block-size: auto;
+	max-block-size: 75vh;
+}

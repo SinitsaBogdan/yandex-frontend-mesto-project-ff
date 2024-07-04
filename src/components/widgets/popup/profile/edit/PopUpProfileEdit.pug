@@ -1,0 +1,47 @@
+extends ../../PopUp
+
+block variables
+    - var popUpClass = 'PopUpProfileEdit';
+    - var popUpTitle = 'Редактировать профиль';
+    - var popUpButton = 'Сохранить';
+    - var popUpContentModification = '';
+
+block Form
+    form(class="PopUp__form" name="profile_edit")
+        label(class="PopUp__label")
+            input(
+                id="profile-input-name"
+                class="popup__input"
+                type="text"
+                name="name"
+                placeholder="Имя"
+                pattern="^[a-zA-Zа-яёА-ЯЁ\s\-]+$"
+                maxlength="40"
+                minlength="2"
+                required
+                data-error-pattern="Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы."
+                data-error-empty="Вы пропустили это поле."
+            )
+            span(
+                id="profile-input-name-error"
+                class="PopUp__form--error"
+            )
+        label(class="PopUp__label")
+            input(
+                id="profile-input-description"
+                class="popup__input"
+                type="text"
+                name="description"
+                placeholder="О себе"
+                pattern="^[a-zA-Zа-яёА-ЯЁ\s\-]+$"
+                maxlength="200"
+                minlength="2"
+                required
+                data-error-pattern="Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы."
+                data-error-empty="Вы пропустили это поле."
+            )
+            span(
+                id="profile-input-description-error"
+                class="PopUp__form--error"
+            )
+        button(type="submit" class="Button PopUp__button") #{popUpButton}

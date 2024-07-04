@@ -1,0 +1,13 @@
+/* GLOBAL ---------------------------------------------------- */
+@import url('../../shared/normalize.css');
+@import url('../../shared/fonts.css');
+@import url('../../shared/global.css');
+
+/* COMPONENTS ------------------------------------------------ */
+@import url('../../shared/components/logo/Logo.css');
+@import url('../../widgets/header/Header.css');
+@import url('../../widgets/footer/Footer.css');
+@import url('../../widgets/profile/Profile.css');
+
+/* POPUP ----------------------------------------------------- */
+@import url('../../widgets/popup/PopUp.css');

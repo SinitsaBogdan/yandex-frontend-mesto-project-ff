@@ -1,0 +1,11 @@
+extends ../../PopUp
+
+block variables
+    - var popUpClass = 'PopUpImageView';
+    - var popUpTitle = '';
+    - var popUpButton = 'Сохранить';
+    - var popUpContentModification = 'PopUp__form--isImage';
+
+block Content
+    img(src="" alt="" class="PopUp__image")
+    p(class="PopUp__caption")

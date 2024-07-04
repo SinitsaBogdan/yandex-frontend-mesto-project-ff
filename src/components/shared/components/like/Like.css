@@ -1,0 +1,14 @@
+@import url('./styles/--active/Like--active.css');
+@import url('./styles/__svg/Like__svg.css');
+@import url('./styles/__count/Like__count.css');
+
+.Like {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	row-gap: 8px;
+	border: none;
+	background: transparent;
+	block-size: min-content;
+}

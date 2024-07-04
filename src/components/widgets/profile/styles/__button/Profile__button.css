@@ -1,0 +1,16 @@
+@import url('./--edit_profile/Profile__button--edit_profile.css');
+@import url('./--create_place/Profile__button--create_place.css');
+
+.Profile__button {
+	border: 2px solid #fff;
+	cursor: pointer;
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-ms-transition: 0.3s;
+	-o-transition: 0.3s;
+	transition: 0.3s;
+}
+
+.Profile__button:hover {
+	opacity: 60%;
+}

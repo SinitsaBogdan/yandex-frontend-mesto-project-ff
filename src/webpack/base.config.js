@@ -12,7 +12,7 @@ module.exports = {
 	output: {
 		path: path.join(__dirname, '../../build'),
 		filename: 'js/[name].js',
-		assetModuleFilename: 'assets/images/[name]-[hash][ext]',
+		assetModuleFilename: 'assets/img/[name]-[hash][ext]',
 	},
 	devServer: {
 		allowedHosts: 'all',

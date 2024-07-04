@@ -1,0 +1,8 @@
+@import url('./--error/PopUp__form--error.css');
+
+.PopUp__form {
+	margin-block-start: 27px;
+	display: flex;
+	flex-direction: column;
+	row-gap: 10px;
+}

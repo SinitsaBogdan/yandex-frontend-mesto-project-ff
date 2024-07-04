@@ -1,0 +1,12 @@
+@import url('./__copyright/Footer__copyright.css');
+
+.Footer {
+	flex-shrink: 0;
+	padding-block: 30px 60px;
+}
+
+@media screen and (max-width: 568px) {
+	.Footer {
+		padding-block: 30px 36px;
+	}
+}

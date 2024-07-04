@@ -1,0 +1,19 @@
+.Profile__button--edit_profile {
+	grid-area: button;
+	align-self: center;
+	margin: 0;
+	padding: 0;
+	background: transparent url('../../../../../../assets/svg/edit-place.svg') center no-repeat;
+	background-size: 10px 10px;
+	inline-size: 36px;
+	block-size: 36px;
+}
+
+@media screen and (max-width: 636px) {
+	.Profile__button--edit_profile {
+		background-size: 18px 18px;
+		inline-size: 40px;
+		block-size: 40px;
+		margin-block-start: 20px;
+	}
+}
